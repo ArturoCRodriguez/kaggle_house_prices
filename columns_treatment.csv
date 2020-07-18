@@ -1,7 +1,28 @@
-name;type;ig;corr;candidatura;notes
-Id;drop;0;;0;clave primaria
-MSSubClass;cat;0,24;;2;150 no en train
-MSZoning;cat;0,11;;1;
-LotFrontage;num;;0,351799;1;
-LotArea;num;;0,2638;0;Normalizamos
-LotAreaNorm;Num;;0,388528;2;
+name;type;ig;corr;candidatura;nulos;notes
+Id;drop;0;;0;0;clave primaria
+MSSubClass;cat;0,24;;2;0;150 no en train
+MSZoning;cat;0,11;;1;0;
+LotFrontage;num;;0,351799;1;1;
+LotArea;drop;;0,2638;0;0;Normalizamos
+LotAreaNorm;num;;0,388528;2;0;
+Street;drop;0;;0;0;
+Alley;drop;;;0;1;
+LotShape;drop;0,07;;0;0;
+LandContour;drop;0,02;;0;0;
+Utilities;drop;;;0;0;
+LotConfig;drop;0,02;;0;0;
+LandSlope;drop;0;;0;0;
+Neighborhood;cat;0,54;;3;0;
+Condition1;drop;0,01;;0;0;
+BldgType;drop;0,03;;0;0;
+HouseStyle;cat;0,08;;1;0;Revisar
+OverallQual;num;0,68;0,79;3;0;
+OverallCond;num;0,12;-0,07;1;0;
+YearBuilt;num;0,4;0,522;3;0;Agrupar podría mejorar el resultado
+YearRemodAdd;num;0,29;0,5;2;0;
+RoofStyle;drop;0,05;;0;0;
+RoofMatl;drop;;;;;
+Exterior1st;cat;0,15;;1;0;Excepciones en Test
+Exterior2nd;cat;0,14;;1;0;Nulos en Test
+ExtTotal;cat;0,19;;1;0;Creada a partir de las anteriores Nulos en Test
+MasVnrType;cat;0,19;;1;1;Tratar nulos en train

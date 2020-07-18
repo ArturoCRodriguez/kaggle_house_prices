@@ -1,5 +1,5 @@
 import pandas as pd
-
+import numpy as np
 def get_resume(data,dependent,independent):
     data_count = data[[independent,dependent]].groupby(independent).count()
     data_mean = data[[independent,dependent]].groupby(independent).mean()
@@ -18,9 +18,17 @@ def information_gain(data,dependent,independent, norm = False):
     var_agg = 0
     data_resume = get_resume(data,dependent,independent)
     for index, row in data_resume.iterrows():
-        var_agg += (row['count']/total) * row['var']
+        var_agg += (row['count']/total) * (0 if np.isnan(row['var']) else row['var'])
     result = var - var_agg 
     if norm:
         result = round(result / var,2)
     return result
-    
+
+data = pd.read_csv('train.csv')
+feat = "OverallCond"
+print("Data completion: {}".format(np.sum(data[feat].count()) / data.shape[0] ))
+print("Information gain: {}".format(information_gain(data,"SalePrice",feat, norm=True)))
+data[feat].hist()
+data.plot(kind="scatter",x=feat, y="SalePrice",alpha=0.1)
+print(data[[feat,"SalePrice"]].corr())
+get_resume(data,"SalePrice",feat)
