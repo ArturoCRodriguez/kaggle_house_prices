@@ -40,3 +40,50 @@ BsmtFinType1+2;cat;0,2;;1;0;1;La mezcla sube un poco el IG
 BsmtFinSF2;drop;;-0,01;;;;
 BsmtUnfSF;num;;0,2144;1;0;1;
 TotalBsmtSF;num;;0,6135;3;0;1;Nulos en Test
+Heating;drop;0,01;;;;;
+HeatingQC;cat;0,19;;1;0;0;
+Heating+QC;cat;0,2;;1;0;0;Mejora algo IG pero hay varios excepts
+CentralAir;drop;0,06;;0;0;0;
+Electrical;drop;0,06;;0;1;0;
+1stFlrSF;num;;0,60582;3;0;0;
+2ndFlrSF;num;;0,319334;2;0;0;
+1stFlrSF2ndFlrSF;num;;0,716883;3;0;0;Suma de los dos pisos
+LowQualFinSF;drop;;-0,025;0;0;0;
+GrLivArea;num;;0,7;1;0;0;Teóricamente es lo mismo que la suma de los pisos, pero parece peor estimador
+BsmtFullBath;num;0,05;0,2271;1;0;1;
+BsmtHalfBath;drop;;;0;;;
+FullBath;num;0,33;0,54;2;0;0;Test tiene un elemento nuevo (4)
+HalfBath;drop;0,06;0,284;0;0;0;
+TotalBathsWB;num;0,33;0,568;3;0;0;
+TotalBaths;num;0,4;0,613;3;0;0;La suma de baños es mejor estimador que la cifra de baños separada
+BedroomAbvGr;num;0,05;0,16;1;0;0;
+KitchenAbvGr;drop;0,02;-0,13;0;0;0;
+KitchenQual;cat;;0,45;2;0;1;
+TotRmsAbvGrd;num;0,29;0,533;3;0;0;Excepciones en Test
+Functional;drop;0,01;;;;;
+Fireplaces;num;0,23;0,46;3;0;0;
+FireplacesNorm;num;;0,48;3;0;0;Normalizando obtenemos mejor corr
+FireplaceQu;drop;;;;1;1;Tiene pocos valores informados
+GarageType;cat;0,17;;1;1;1;Rellenamos con moda
+GarageYrBlt;num;0,34;0,5;3;1;1;Rellenamos con YearBuilt
+GarageFinish;cat;0,29;;2;1;1;Rellenamos con moda
+GarageCars;num;0,49;0,64;3;0;1;
+GarageArea;drop;;;;;;Demasiada corr con GarageCars
+GarageQual;drop;0,09;;;;;
+GarageCond;drop;0,09;;;;;
+WoodDeckSF;num;;0,324;2;0;0;
+OpenPorchSF;num;;0,315;;0;0;Normalizar aumenta corr
+OpenPorchSFNorm;num;;0,42997;3;0;0;
+EnclosedPorch;drop;;-0,12;;;;
+3SsnPorch;drop;;0,04;;;;
+ScreenPorch;drop;;;;;;
+PoolArea;drop;;;;;;
+PoolQC;drop;;;;;;
+Fence;drop;;;;;;
+MiscFeature;drop;;;;;;
+MiscVal;drop;;;;;;
+MoSold;drop;;;;;;Conocido tras la venta
+YrSold;drop;;;;;;Conocido tras la venta
+SaleType;drop;;;;;;Conocido tras la venta
+SaleCondition;drop;;;;;;Conocido tras la venta
+SalePrice;label;;;;;;
