@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import math
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import OrdinalEncoder,MinMaxScaler
+from sklearn.preprocessing import OrdinalEncoder,MinMaxScaler, RobustScaler, OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
@@ -28,8 +28,8 @@ for x in X_train.columns:
         drop_features.append(x)
 
 full_pipeline = ColumnTransformer([
-    ("cat",OrdinalEncoder(),cat_features),
-    ("num",MinMaxScaler(),num_features)
+    ("cat",OneHotEncoder(handle_unknown="ignore"),cat_features),
+    ("num",RobustScaler(),num_features)
 ])
 X_train_droped = X_train.drop(drop_features, axis=1)
 X_train_prepared = full_pipeline.fit_transform(X_train_droped)
@@ -41,7 +41,7 @@ clf = XGBRegressor()
 # clf = grid.best_estimator_
 clf.fit(X_train_prepared,y_train)
 X_test_droped = X_test.drop(drop_features, axis=1)
-X_test_prepared = full_pipeline.fit_transform(X_test_droped)
+X_test_prepared = full_pipeline.transform(X_test_droped)
 y_pred = clf.predict(X_test_prepared)
 
 error = math.sqrt(mean_squared_log_error(y_test,y_pred))
