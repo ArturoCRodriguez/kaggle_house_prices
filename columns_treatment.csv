@@ -18,7 +18,7 @@ BldgType;drop;0,03;;0;0;;
 HouseStyle;cat;0,08;;1;0;;Revisar
 OverallQual;num;0,68;0,79;3;0;;
 OverallCond;num;0,12;-0,07;1;0;;
-YearBuilt;num;0,4;0,522;3;0;;Agrupar podría mejorar el resultado
+YearBuilt;num;0,4;0,522;3;0;;Agrupar podrï¿½a mejorar el resultado
 YearRemodAdd;num;0,29;0,5;2;0;;
 RoofStyle;drop;0,05;;0;0;;
 RoofMatl;drop;;;;;;
@@ -49,13 +49,13 @@ Electrical;drop;0,06;;0;1;0;
 2ndFlrSF;num;;0,319334;2;0;0;
 1stFlrSF2ndFlrSF;num;;0,716883;3;0;0;Suma de los dos pisos
 LowQualFinSF;drop;;-0,025;0;0;0;
-GrLivArea;num;;0,7;1;0;0;Teóricamente es lo mismo que la suma de los pisos, pero parece peor estimador
+GrLivArea;num;;0,7;1;0;0;Teï¿½ricamente es lo mismo que la suma de los pisos, pero parece peor estimador
 BsmtFullBath;num;0,05;0,2271;1;0;1;
 BsmtHalfBath;drop;;;0;;;
 FullBath;num;0,33;0,54;2;0;0;Test tiene un elemento nuevo (4)
 HalfBath;drop;0,06;0,284;0;0;0;
 TotalBathsWB;num;0,33;0,568;3;0;0;
-TotalBaths;num;0,4;0,613;3;0;0;La suma de baños es mejor estimador que la cifra de baños separada
+TotalBaths;num;0,4;0,613;3;0;0;La suma de baï¿½os es mejor estimador que la cifra de baï¿½os separada
 BedroomAbvGr;num;0,05;0,16;1;0;0;
 KitchenAbvGr;drop;0,02;-0,13;0;0;0;
 KitchenQual;cat;;0,45;2;0;1;
