@@ -22,8 +22,8 @@ YearBuilt;num;0,4;0,522;3;0;;Agrupar podr�a mejorar el resultado
 YearRemodAdd;num;0,29;0,5;2;0;;
 RoofStyle;drop;0,05;;0;0;;
 RoofMatl;drop;;;;;;
-Exterior1st;cat;0,15;;1;0;;Excepciones en Test
-Exterior2nd;cat;0,14;;1;0;1;Nulos en Test
+Exterior1st;drop;0,15;;1;0;;Excepciones en Test
+Exterior2nd;drop;0,14;;1;0;1;Nulos en Test
 ExtTotal;cat;0,19;;1;0;;Creada a partir de las anteriores Nulos en Test
 MasVnrType;cat;0,19;;1;1;;Tratar nulos en train
 MasVnrArea;num;;0,47;2;1;;Rellenamos con ceros. Hay muchos ceros
