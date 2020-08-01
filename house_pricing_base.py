@@ -15,7 +15,6 @@ X = data.drop('SalePrice',axis=1)
 y = data['SalePrice']
 
 X_train, X_test,y_train, y_test = train_test_split(X, y, test_size = 0.33, random_state= 42)
-
 cat_features = []
 num_features = []
 drop_features = []
