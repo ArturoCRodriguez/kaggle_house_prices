@@ -1,5 +1,15 @@
 import pandas as pd
 import numpy as np
+def clip_columns(X,columns,min_q,max_q):
+    if isinstance(X,pd.DataFrame) == False:
+        raise ValueError('X is not a DataFrame')
+    df = X.copy()
+    for c in columns:
+        min_value = X[c].quantile(min_q)
+        max_value = X[c].quantile(max_q)
+        df[c] = df.apply(lambda x: min_value if x[c] < min_value else max_value if x[c] > max_value else x[c],axis=1)
+    return df
+
 def get_resume(data,dependent,independent):
     data_count = data[[independent,dependent]].groupby(independent).count()
     data_mean = data[[independent,dependent]].groupby(independent).mean()
@@ -24,11 +34,11 @@ def information_gain(data,dependent,independent, norm = False):
         result = round(result / var,2)
     return result
 
-data = pd.read_csv('train.csv')
-feat = "OverallCond"
-print("Data completion: {}".format(np.sum(data[feat].count()) / data.shape[0] ))
-print("Information gain: {}".format(information_gain(data,"SalePrice",feat, norm=True)))
-data[feat].hist()
-data.plot(kind="scatter",x=feat, y="SalePrice",alpha=0.1)
-print(data[[feat,"SalePrice"]].corr())
-get_resume(data,"SalePrice",feat)
+# data = pd.read_csv('train.csv')
+# feat = "OverallCond"
+# print("Data completion: {}".format(np.sum(data[feat].count()) / data.shape[0] ))
+# print("Information gain: {}".format(information_gain(data,"SalePrice",feat, norm=True)))
+# data[feat].hist()
+# data.plot(kind="scatter",x=feat, y="SalePrice",alpha=0.1)
+# print(data[[feat,"SalePrice"]].corr())
+# get_resume(data,"SalePrice",feat)
